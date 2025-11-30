@@ -1,139 +1,154 @@
-:root{
-  --bg:#0a0a0a;
-  --muted:#9aa6b2;
-  --text:#e9f0f7;
-  --accent:#ff6a6a;
-  --accent-2:#6ad3ff;
-  --header-height:72px;
-  font-family: 'Poppins', system-ui, sans-serif;
+/* ------------------- Global ------------------- */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
 }
 
-/* base */
-*{ box-sizing:border-box; }
-body{
-  margin:0;
-  background:#07090c;
-  color:var(--text);
+body {
+  background: #0e0e0e;
+  color: #ddd;
+  scroll-behavior: smooth;
 }
 
-/* ---------------- FIXED RIGHT SIDE NAV ---------------- */
-.site-header{
-  position:fixed;
-  top:50%;
-  right:12px;
-  transform:translateY(-50%);
-  z-index:1000;
+a { color: #ff6a6a; text-decoration: none; }
+
+/* ------------------- Navbar ------------------- */
+
+.navbar {
+  width: 100%;
+  padding: 20px 40px;
+  background: #0e0e0e;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-.nav-list{
-  list-style:none;
-  margin:0;
-  padding:0;
-  display:flex;
-  flex-direction:column;
-  gap:14px;
+.logo {
+  color: #ff3333;
+  font-weight: 700;
 }
 
-.nav-list a{
-  writing-mode:vertical-rl;
-  transform:rotate(180deg);
-  color:var(--muted);
-  font-size:14px;
-  text-decoration:none;
-  transition:.2s;
+nav a {
+  margin-left: 28px;
+  color: #ccc;
+  font-weight: 500;
 }
 
-.nav-list a:hover{
-  color:#fff;
+nav a:hover {
+  color: #ff6a6a;
 }
 
-/* ---------------- MAIN LAYOUT ---------------- */
-main{
-  max-width:1100px;
-  margin:0 auto;
-  padding:60px 18px;
+/* ------------------- Full Page Section ------------------- */
+
+.fullpage {
+  min-height: 100vh;
+  padding-top: 120px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
 }
 
-/* ---------------- FULL PAGE SECTIONS ---------------- */
-section{
-  scroll-margin-top:80px;
-  padding:40px 20px;
-  min-height:100vh;   /* FULL PAGE FIX */
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
+/* ------------------- Home ------------------- */
+
+.hero-img {
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 6px solid rgba(255,255,255,0.05);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.6);
+  margin-bottom: 20px;
 }
 
-/* ---------------- HERO ---------------- */
-.hero{
-  text-align:center;
+.hero-title {
+  font-size: 48px;
+  font-weight: 700;
+  color: #fff;
 }
 
-.hero-img{
-  width:300px;
-  height:300px;
-  border-radius:50%;
-  object-fit:cover;
-  margin:0 auto 20px;
-  border:6px solid rgba(255,255,255,0.06);
-  box-shadow:0 12px 30px rgba(0,0,0,.6);
+.hero-sub {
+  margin-top: 10px;
+  font-size: 18px;
+  color: #bbb;
 }
 
-.hero-title{
-  font-size:40px;
-  margin:10px 0;
+.hero-btn {
+  margin-top: 22px;
+  padding: 12px 26px;
+  background: linear-gradient(90deg,#ff6a6a,#ff4444);
+  color: white;
+  font-weight: 600;
+  border-radius: 10px;
 }
 
-.hero-sub{
-  color:var(--muted);
-  margin-bottom:16px;
+/* ------------------- About ------------------- */
+
+.section-title {
+  font-size: 32px;
+  font-weight: 700;
+  color: #ff4d6d;
+  margin-bottom: 18px;
 }
 
-.hero-btn{
-  background:linear-gradient(90deg,#ff6a6a,#ff9f9f);
-  color:#fff;
-  padding:10px 20px;
-  border-radius:10px;
-  text-decoration:none;
-  font-weight:600;
+.about-img {
+  width: 240px;
+  height: 240px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 6px solid rgba(255,255,255,0.05);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.6);
+  margin-bottom: 20px;
 }
 
-/* ---------------- ABOUT ---------------- */
-#about{
-  text-align:center;
+.about-text {
+  max-width: 800px;
+  font-size: 18px;
+  color: #ccc;
+  line-height: 1.6;
 }
 
-.about-img{
-  width:160px;
-  height:160px;
-  border-radius:50%;
-  object-fit:cover;
-  border:6px solid rgba(255,255,255,.05);
-  margin:0 auto 20px;
+/* ------------------- Skills ------------------- */
+
+#skills {
+  padding: 120px 40px;
+  text-align: center;
 }
 
-/* ---------------- SKILLS ---------------- */
-#skills{
-  text-align:center;
+.skills-box {
+  margin-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
 }
 
-.skills-box{
-  display:flex;
-  justify-content:center;
-  flex-wrap:wrap;
-  gap:12px;
+.skill {
+  padding: 12px 20px;
+  background: #1a1a1a;
+  border-radius: 12px;
+  font-weight: 600;
+  color: #eee;
+  box-shadow: 0 4px 18px rgba(0,0,0,0.3);
 }
 
-.skill{
-  background:rgba(255,255,255,0.05);
-  padding:10px 18px;
-  border-radius:10px;
-  font-weight:600;
-  color:var(--muted);
+/* ------------------- Contact ------------------- */
+
+#contact {
+  padding: 120px 40px;
+  text-align: center;
 }
 
-/* ---------------- CONTACT ---------------- */
-.contact-box{
-  text-align:center;
+.contact-line {
+  margin: 10px 0;
+  font-size: 18px;
 }
 
