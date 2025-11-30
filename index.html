@@ -2,98 +2,97 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Chandru D | Portfolio</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Chandru D — Portfolio</title>
 
-  <link rel="stylesheet" href="style.css" />
+  <!-- Google font (used in style.css) -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
-  <!-- Lottie Animation -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.9.6/lottie.min.js"></script>
+  <!-- Your stylesheet (paste the style.css I gave earlier) -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Optional small favicon -->
+  <link rel="icon" href="images/me.jpg" type="image/jpeg" />
 </head>
-
 <body>
 
-  <!-- HEADER -->
-  <header class="site-header">
-    <div class="container header-inner">
-      <div class="logo">Chandru D</div>
-      <nav class="main-nav">
-        <a href="#home">Home</a>
-        <a href="#about">About</a>
-        <a href="#skills">Skills</a>
-        <a href="#contact">Contact</a>
-      </nav>
-    </div>
+  <!-- HEADER / NAV -->
+  <header>
+    <nav>
+      <h2>Chandru D</h2>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
   </header>
 
-  <!-- HERO SECTION -->
-  <section id="home" class="hero-lottie">
-    <div id="lottie-player"></div>
+  <!-- HERO -->
+  <main>
+    <section id="home" aria-label="home">
+      <img src="images/me.jpg" alt="profile" class="hero-img">
+      <h1 class="hero-title">Welcome To My World <span>🌍</span></h1>
+      <p class="hero-sub">Hi, I'm <strong>Chandru D</strong> — a BCA student & web developer (learning).</p>
+      <a class="hero-btn" href="#about">Know More</a>
+    </section>
 
-    <div class="hero-text">
-      <h1>Welcome To My World 🌍</h1>
-      <p>Hi, I'm <b>Chandru D</b> — a BCA Student & Web Developer (Learning).</p>
-      <a class="button" href="#about">Know More</a>
-    </div>
-  </section>
+    <!-- ABOUT -->
+    <section id="about" aria-label="about">
+      <h2>About Me</h2>
 
-  <!-- ABOUT -->
-  <section id="about" class="container about">
-    <h2>About Me</h2>
-    <div class="about-grid">
-      <img src="images/me.jpg" alt="My Photo" class="profile-photo" />
+      <div style="text-align:center; padding-top:12px;">
+        <!-- circular profile -->
+        <img src="images/me.jpg" alt="Chandru D" class="about-img">
+      </div>
 
-      <p>
-        I am <b>Chandru D</b>, a BCA student learning web development.  
-        I enjoy building simple websites and learning new technologies like HTML, CSS, JavaScript, Python, C, Git & GitHub.
+      <p style="margin-top:18px;">
+        I am <strong>Chandru D</strong>, a BCA student learning web development. I enjoy building simple websites and learning new technologies like HTML, CSS, JavaScript, Python, C, Git &amp; GitHub.
       </p>
-    </div>
-  </section>
+    </section>
 
-  <!-- SKILLS -->
-  <section id="skills" class="container skills">
-    <h2>My Skills</h2>
+    <!-- SKILLS -->
+    <section id="skills" aria-label="skills">
+      <h2>My Skills</h2>
 
-    <ul class="skill-list">
-      <li>HTML</li>
-      <li>CSS (Basic)</li>
-      <li>JavaScript</li>
-      <li>Python</li>
-      <li>C Programming</li>
-      <li>Git & GitHub</li>
-    </ul>
-  </section>
+      <div class="skills-box" style="margin-top:16px;">
+        <div class="skill">HTML</div>
+        <div class="skill">CSS (Basic)</div>
+        <div class="skill">JavaScript</div>
+        <div class="skill">Python</div>
+        <div class="skill">C Programming</div>
+        <div class="skill">Git &amp; GitHub</div>
+      </div>
+    </section>
 
-  <!-- CONTACT -->
-  <section id="contact" class="container contact">
-    <h2>Contact Me</h2>
-    <p>You can reach me anytime on:</p>
+    <!-- CONTACT -->
+    <section id="contact" aria-label="contact">
+      <h2>Contact Me</h2>
 
-    <ul class="contact-list">
-      <li>Email: chandru.d058@gmail.com</li>
-      <li>Instagram: @f_y_p_crr</li>
-    </ul>
-  </section>
+      <div class="contact-box" style="margin-top:14px;">
+        <p><strong>Email:</strong> <a href="mailto:chandru.d058@gmail.com" style="color:#00acee;text-decoration:none;">chandru.d058@gmail.com</a></p>
+        <p><strong>Instagram:</strong> <a href="https://instagram.com/f_y_p_crr" target="_blank" rel="noopener" style="color:#00acee;text-decoration:none;">@f_y_p_crr</a></p>
 
-  <!-- FOOTER -->
-  <footer class="site-footer">
-    <p>© <span id="year"></span> Chandru D | Portfolio</p>
-  </footer>
+        <div class="social-links" style="margin-top:12px;">
+          <!-- add more icons/links if you like -->
+          <a href="https://instagram.com/f_y_p_crr" target="_blank" rel="noopener">Instagram</a>
+          &nbsp;•&nbsp;
+          <a href="mailto:chandru.d058@gmail.com">Email</a>
+        </div>
+      </div>
+    </section>
+  </main>
 
-  <!-- SCRIPT -->
+  <!-- small script to reveal sections with a short delay (keeps CSS-only simple) -->
   <script>
-    // Year update
-    document.getElementById("year").textContent = new Date().getFullYear();
-
-    // Lottie Animation Loader
-    lottie.loadAnimation({
-      container: document.getElementById("lottie-player"),
-      renderer: "svg",
-      loop: true,
-      autoplay: true,
-      path: "https://assets2.lottiefiles.com/packages/lf20_kyu7xb1v.json"
+    // add slight stagger to section reveal
+    document.addEventListener('DOMContentLoaded', () => {
+      const sections = document.querySelectorAll('main section');
+      sections.forEach((s, i) => {
+        s.style.animationDelay = (i * 0.15) + 's';
+      });
     });
   </script>
-
 </body>
 </html>
