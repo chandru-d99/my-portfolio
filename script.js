@@ -1,87 +1,45 @@
-// Simple animations + typewriter + reveal on scroll
-
+// Wait for DOM
 document.addEventListener('DOMContentLoaded', () => {
-  // 1) Typewriter for subtitle (if element exists)
-  const typedEl = document.querySelector('.subtitle-typed');
-  const texts = ['a BCA Student', 'Web Developer (learning)', 'Python • C • JavaScript'];
-  if (typedEl) {
-    let ti = 0, ci = 0;
-    const type = () => {
-      const txt = texts[ti];
-      typedEl.textContent = txt.slice(0, ++ci);
-      if (ci === txt.length) {
-        // pause then erase
-        setTimeout(() => erase(), 900);
-      } else {
-        setTimeout(type, 70);
-      }
-    };
-    const erase = () => {
-      const txt = texts[ti];
-      typedEl.textContent = txt.slice(0, --ci);
-      if (ci === 0) {
-        ti = (ti + 1) % texts.length;
-        setTimeout(type, 200);
-      } else {
-        setTimeout(erase, 40);
-      }
-    };
-    type();
-  }
+  // 1) stagger animation delays for sections and their children
+  const sections = document.querySelectorAll('main section');
+  sections.forEach((s, i) => {
+    const delay = i * 0.15;
+    s.style.animationDelay = (delay) + 's';
 
-  // 2) Pop the profile photo
-  const photo = document.querySelector('.profile-photo');
-  if (photo) {
-    // small delay to let the page paint
-    setTimeout(() => photo.classList.add('pop'), 350);
-  }
+    const children = s.querySelectorAll('.skill, p, h2, .hero-title, .hero-sub, .hero-btn, .about-img');
+    children.forEach((c, j) => {
+      c.style.animationDelay = (delay + 0.12 + j * 0.06) + 's';
+    });
+  });
 
-  // 3) IntersectionObserver reveal for .fade-in and skills list
-  const observerOptions = {
-    root: null,
-    rootMargin: '0px 0px -10% 0px',
-    threshold: 0.12
-  };
+  // 2) intersection observer to reveal only when in view (improves performance)
+  const observerOptions = { root: null, rootMargin: '0px', threshold: 0.12 };
   const revealObserver = new IntersectionObserver((entries, obs) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         const el = entry.target;
-        // for list items (skills)
-        if (el.tagName.toLowerCase() === 'li') {
-          el.classList.add('visible');
-        } else {
-          el.classList.add('visible');
-        }
+        el.classList.add('visible'); // not required but useful for debugging
+        // if section has children that had animation inline delay, they will animate automatically
         obs.unobserve(el);
       }
     });
   }, observerOptions);
 
-  // observe all elements with .fade-in and skills li
-  document.querySelectorAll('.fade-in, .skills-list li').forEach(el => {
-    revealObserver.observe(el);
-  });
+  document.querySelectorAll('main section').forEach(el => revealObserver.observe(el));
 
-  // 4) sticky header small behaviour
-  const header = document.querySelector('.site-header');
-  if (header) {
-    const stickyToggle = () => {
-      if (window.scrollY > 20) header.classList.add('sticky');
-      else header.classList.remove('sticky');
-    };
-    stickyToggle();
-    window.addEventListener('scroll', stickyToggle);
-  }
-});
-document.addEventListener('DOMContentLoaded', () => {
-  const sections = document.querySelectorAll('main section');
-  sections.forEach((s, i) => {
-    const delay = i * 0.15;
-    s.style.animationDelay = delay + 's';
-    // stagger children a bit later
-    const children = s.querySelectorAll('.skill, p, h2, .hero-title, .hero-sub, .hero-btn');
-    children.forEach((c, j) => {
-      c.style.animationDelay = (delay + 0.12 + j * 0.06) + 's';
+  // 3) Smooth scrolling for anchor clicks (works on all browsers)
+  document.querySelectorAll('a[href^="#"]').forEach(a=>{
+    a.addEventListener('click', (e) => {
+      const href = a.getAttribute('href');
+      if (href.startsWith('#')) {
+        e.preventDefault();
+        const target = document.querySelector(href);
+        if (target) {
+          // use scrollIntoView with offset from CSS scroll-margin-top
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          history.replaceState(null, '', href); // updates URL hash without extra scrolling
+        }
+      }
     });
   });
 });
