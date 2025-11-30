@@ -5,22 +5,17 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Chandru D — Portfolio</title>
 
-  <!-- Google font (used in style.css) -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-
-  <!-- Your stylesheet (paste the style.css I gave earlier) -->
   <link rel="stylesheet" href="style.css">
-
-  <!-- Optional small favicon -->
   <link rel="icon" href="images/me.jpg" type="image/jpeg" />
 </head>
 <body>
 
   <!-- HEADER / NAV -->
-  <header>
-    <nav>
-      <h2>Chandru D</h2>
-      <ul>
+  <header class="site-header">
+    <nav class="nav">
+      <h2 class="brand">Chandru D</h2>
+      <ul class="nav-list">
         <li><a href="#home">Home</a></li>
         <li><a href="#about">About</a></li>
         <li><a href="#skills">Skills</a></li>
@@ -29,9 +24,10 @@
     </nav>
   </header>
 
-  <!-- HERO -->
+  <!-- MAIN -->
   <main>
-    <section id="home" aria-label="home">
+    <!-- HERO -->
+    <section id="home" class="hero" aria-label="home">
       <img src="images/me.jpg" alt="profile" class="hero-img">
       <h1 class="hero-title">Welcome To My World <span>🌍</span></h1>
       <p class="hero-sub">Hi, I'm <strong>Chandru D</strong> — a BCA student & web developer (learning).</p>
@@ -39,24 +35,18 @@
     </section>
 
     <!-- ABOUT -->
-    <section id="about" aria-label="about">
+    <section id="about" aria-label="about" class="fade-in">
       <h2>About Me</h2>
-
-      <div style="text-align:center; padding-top:12px;">
-        <!-- circular profile -->
+      <div class="about-inner">
         <img src="images/me.jpg" alt="Chandru D" class="about-img">
+        <p>I am <strong>Chandru D</strong>, a BCA student learning web development. I enjoy building simple websites and learning new technologies like HTML, CSS, JavaScript, Python, C, Git &amp; GitHub.</p>
       </div>
-
-      <p style="margin-top:18px;">
-        I am <strong>Chandru D</strong>, a BCA student learning web development. I enjoy building simple websites and learning new technologies like HTML, CSS, JavaScript, Python, C, Git &amp; GitHub.
-      </p>
     </section>
 
     <!-- SKILLS -->
-    <section id="skills" aria-label="skills">
+    <section id="skills" aria-label="skills" class="fade-in">
       <h2>My Skills</h2>
-
-      <div class="skills-box" style="margin-top:16px;">
+      <div class="skills-box">
         <div class="skill">HTML</div>
         <div class="skill">CSS (Basic)</div>
         <div class="skill">JavaScript</div>
@@ -67,32 +57,15 @@
     </section>
 
     <!-- CONTACT -->
-    <section id="contact" aria-label="contact">
+    <section id="contact" aria-label="contact" class="fade-in">
       <h2>Contact Me</h2>
-
-      <div class="contact-box" style="margin-top:14px;">
-        <p><strong>Email:</strong> <a href="mailto:chandru.d058@gmail.com" style="color:#00acee;text-decoration:none;">chandru.d058@gmail.com</a></p>
-        <p><strong>Instagram:</strong> <a href="https://instagram.com/f_y_p_crr" target="_blank" rel="noopener" style="color:#00acee;text-decoration:none;">@f_y_p_crr</a></p>
-
-        <div class="social-links" style="margin-top:12px;">
-          <!-- add more icons/links if you like -->
-          <a href="https://instagram.com/f_y_p_crr" target="_blank" rel="noopener">Instagram</a>
-          &nbsp;•&nbsp;
-          <a href="mailto:chandru.d058@gmail.com">Email</a>
-        </div>
+      <div class="contact-box">
+        <p><strong>Email:</strong> <a href="mailto:chandru.d058@gmail.com">chandru.d058@gmail.com</a></p>
+        <p><strong>Instagram:</strong> <a href="https://instagram.com/f_y_p_crr" target="_blank" rel="noopener">@f_y_p_crr</a></p>
       </div>
     </section>
   </main>
 
-  <!-- small script to reveal sections with a short delay (keeps CSS-only simple) -->
-  <script>
-    // add slight stagger to section reveal
-    document.addEventListener('DOMContentLoaded', () => {
-      const sections = document.querySelectorAll('main section');
-      sections.forEach((s, i) => {
-        s.style.animationDelay = (i * 0.15) + 's';
-      });
-    });
-  </script>
+  <script src="script.js"></script>
 </body>
 </html>
