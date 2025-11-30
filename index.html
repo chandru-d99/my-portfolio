@@ -2,45 +2,98 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Chandru D | Portfolio</title>
+
   <link rel="stylesheet" href="style.css" />
+
+  <!-- Lottie Animation -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.9.6/lottie.min.js"></script>
 </head>
+
 <body>
 
-<header class="site-header">
-  <div class="logo">Chandru D</div>
-  <nav>
-    <a href="#home">Home</a>
-    <a href="#about">About</a>
-    <a href="#skills">Skills</a>
-    <a href="#contact">Contact</a>
-  </nav>
-</header>
-
-<main>
-  <section id="home" class="hero">
-    <div>
-      <h1>Hi, I'm <span class="name">Chandru D </span></h1>
-      <p class="lead">BCA Student • Web Developer (Learning)</p>
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="logo">Chandru D</div>
+      <nav class="main-nav">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact">Contact</a>
+      </nav>
     </div>
-    <img src="images/me.jpg" class="profile-photo" alt="My Photo" />
+  </header>
+
+  <!-- HERO SECTION -->
+  <section id="home" class="hero-lottie">
+    <div id="lottie-player"></div>
+
+    <div class="hero-text">
+      <h1>Welcome To My World 🌍</h1>
+      <p>Hi, I'm <b>Chandru D</b> — a BCA Student & Web Developer (Learning).</p>
+      <a class="button" href="#about">Know More</a>
+    </div>
   </section>
 
-  <section id="about" class="card">
+  <!-- ABOUT -->
+  <section id="about" class="container about">
     <h2>About Me</h2>
-    <p>
-      I am a BCA student learning web development. This is my first portfolio website.
-    </p>
+    <div class="about-grid">
+      <img src="images/me.jpg" alt="My Photo" class="profile-photo" />
+
+      <p>
+        I am <b>Chandru D</b>, a BCA student learning web development.  
+        I enjoy building simple websites and learning new technologies like HTML, CSS, JavaScript, Python, C, Git & GitHub.
+      </p>
+    </div>
   </section>
 
-  <section id="skills" class="card">
-    <h2>Skills</h2>
-    <ul class="skills-list">
+  <!-- SKILLS -->
+  <section id="skills" class="container skills">
+    <h2>My Skills</h2>
+
+    <ul class="skill-list">
       <li>HTML</li>
-      <li>PYTHON</li>
-      <li>JavaScript  (Basic)</li>
+      <li>CSS (Basic)</li>
+      <li>JavaScript</li>
+      <li>Python</li>
+      <li>C Programming</li>
       <li>Git & GitHub</li>
-      </ul>
-      </section>
-      <li>
+    </ul>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="container contact">
+    <h2>Contact Me</h2>
+    <p>You can reach me anytime on:</p>
+
+    <ul class="contact-list">
+      <li>Email: chandru.d058@gmail.com</li>
+      <li>Instagram: @f_y_p_crr</li>
+    </ul>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <p>© <span id="year"></span> Chandru D | Portfolio</p>
+  </footer>
+
+  <!-- SCRIPT -->
+  <script>
+    // Year update
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    // Lottie Animation Loader
+    lottie.loadAnimation({
+      container: document.getElementById("lottie-player"),
+      renderer: "svg",
+      loop: true,
+      autoplay: true,
+      path: "https://assets2.lottiefiles.com/packages/lf20_kyu7xb1v.json"
+    });
+  </script>
+
+</body>
+</html>
