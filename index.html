@@ -9,63 +9,67 @@
   <link rel="stylesheet" href="style.css">
   <link rel="icon" href="images/me.jpg" type="image/jpeg" />
 </head>
+
 <body>
 
-  <!-- HEADER / NAV -->
-  <header class="site-header">
-    <nav class="nav">
-      <h2 class="brand">Chandru D</h2>
-      <ul class="nav-list">
-        <li><a href="#home">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
+  <!-- NAVBAR -->
+  <header class="navbar">
+    <h2 class="logo">Chandru D</h2>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#contact">Contact</a>
     </nav>
   </header>
 
-  <!-- MAIN -->
-  <main>
-    <!-- HERO -->
-    <section id="home" class="hero" aria-label="home">
-      <img src="images/me.jpg" alt="profile" class="hero-img">
-      <h1 class="hero-title">Welcome To My World <span>🌍</span></h1>
-      <p class="hero-sub">Hi, I'm <strong>Chandru D</strong> — a BCA student & web developer (learning).</p>
-      <a class="hero-btn" href="#about">Know More</a>
-    </section>
+  <!-- HOME SECTION -->
+  <section id="home" class="fullpage">
+    <img src="images/me.jpg" class="hero-img" alt="Chandru D">
+    <h1 class="hero-title">Welcome To My World 🌍</h1>
+    <p class="hero-sub">Hi, I'm <strong>Chandru D</strong> — a BCA student & web developer (learning).</p>
+    <a class="hero-btn" href="#about">Know More</a>
+  </section>
 
-    <!-- ABOUT -->
-    <section id="about" aria-label="about" class="fade-in">
-      <h2>About Me</h2>
-      <div class="about-inner">
-        <img src="images/me.jpg" alt="Chandru D" class="about-img">
-        <p>I am <strong>Chandru D</strong>, a BCA student learning web development. I enjoy building simple websites and learning new technologies like HTML, CSS, JavaScript, Python, C, Git &amp; GitHub.</p>
-      </div>
-    </section>
+  <!-- ABOUT SECTION -->
+  <section id="about" class="fullpage">
+    <h2 class="section-title">About Me</h2>
 
-    <!-- SKILLS -->
-    <section id="skills" aria-label="skills" class="fade-in">
-      <h2>My Skills</h2>
-      <div class="skills-box">
-        <div class="skill">HTML</div>
-        <div class="skill">CSS (Basic)</div>
-        <div class="skill">JavaScript</div>
-        <div class="skill">Python</div>
-        <div class="skill">C Programming</div>
-        <div class="skill">Git &amp; GitHub</div>
-      </div>
-    </section>
+    <img src="images/me.jpg" class="about-img" alt="Chandru D">
 
-    <!-- CONTACT -->
-    <section id="contact" aria-label="contact" class="fade-in">
-      <h2>Contact Me</h2>
-      <div class="contact-box">
-        <p><strong>Email:</strong> <a href="mailto:chandru.d058@gmail.com">chandru.d058@gmail.com</a></p>
-        <p><strong>Instagram:</strong> <a href="https://instagram.com/f_y_p_crr" target="_blank" rel="noopener">@f_y_p_crr</a></p>
-      </div>
-    </section>
-  </main>
+    <p class="about-text">
+      I am <strong>Chandru D</strong>, a BCA student learning web development.  
+      I enjoy building simple websites and learning new technologies like  
+      HTML, CSS, JavaScript, Python, C, Git & GitHub.
+    </p>
+  </section>
 
-  <script src="script.js"></script>
+  <!-- SKILLS SECTION -->
+  <section id="skills">
+    <h2 class="section-title">My Skills</h2>
+
+    <div class="skills-box">
+      <div class="skill">HTML</div>
+      <div class="skill">CSS (Basic)</div>
+      <div class="skill">JavaScript</div>
+      <div class="skill">Python</div>
+      <div class="skill">C Programming</div>
+      <div class="skill">Git & GitHub</div>
+    </div>
+  </section>
+
+  <!-- CONTACT SECTION -->
+  <section id="contact">
+    <h2 class="section-title">Contact Me</h2>
+
+    <p class="contact-line"><strong>Email:</strong>  
+      <a href="mailto:chandru.d058@gmail.com">chandru.d058@gmail.com</a>
+    </p>
+
+    <p class="contact-line"><strong>Instagram:</strong>  
+      <a href="https://instagram.com/f_y_p_crr" target="_blank">@f_y_p_crr</a>
+    </p>
+  </section>
+
 </body>
 </html>
