@@ -93,19 +93,23 @@ main{
   animation:fadeUp .6s ease both;
 }
 
-.hero-img{
-  width:260px;
-  height:160px;
-  object-fit:cover;
-  border-radius:16px;
+/* hero image (profile) */
+.hero-img {
+  width: 320px;        /* bigger size */
+  height: 320px;       /* circle */
+  object-fit: cover;   /* crop nicely */
+  border-radius: 50%;  /* perfect round */
+  border: 6px solid rgba(255,255,255,0.06);
   box-shadow: 0 12px 30px rgba(0,0,0,0.6), inset 0 1px 0 rgba(255,255,255,0.02);
-  border: 6px solid rgba(255,255,255,0.02);
+  display: block;
+  margin: 18px auto;   /* center horizontally */
+
 }
 
 /* title */
 .hero-title{
   margin:0;
-  font-size:34px;
+  font-size:42px;
   line-height:1.05;
   font-weight:700;
   color:var(--text);
@@ -117,8 +121,8 @@ main{
 /* small subtitle */
 .hero-sub{
   color:var(--muted);
-  margin:8px 0 10px;
-  font-size:16px;
+  margin:12px 0 18px;
+  font-size:20px;
   max-width:720px;
 }
 
@@ -126,10 +130,10 @@ main{
 .hero-btn{
   display:inline-block;
   margin-top:6px;
-  background: linear-gradient(90deg,var(--accent), #ff6a6a);
+  background: linear-gradient(90deg,#ff4b4b, #ff8b8b);
   color:white;
-  padding:10px 18px;
-  border-radius:10px;
+  padding:14px 28px;
+  border-radius:50px;
   text-decoration:none;
   font-weight:600;
   box-shadow: 0 8px 30px rgba(225,59,85,0.18);
@@ -252,3 +256,4 @@ main section {
 @keyframes item-reveal {
   to { opacity: 1; transform: translateY(0); }
 }
+
