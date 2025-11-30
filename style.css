@@ -229,3 +229,26 @@ a:focus, button:focus{ outline:3px solid rgba(43,183,245,0.14); outline-offset:3
 pre{ background:rgba(255,255,255,0.02); padding:12px; border-radius:8px; color:var(--muted); overflow:auto }
 
 /* ---------- end ---------- */
+
+/* ---- smooth reveal animation ---- */
+
+main section {
+  opacity: 0;
+  transform: translateY(18px) scale(.995);
+  animation: section-reveal 600ms cubic-bezier(.2,.9,.2,1) forwards;
+}
+
+@keyframes section-reveal {
+  from { opacity: 0; transform: translateY(18px) scale(.995); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+.skill, p, h2, .hero-title, .hero-sub, .hero-btn {
+  opacity: 0;
+  transform: translateY(8px);
+  animation: item-reveal 450ms ease forwards;
+}
+
+@keyframes item-reveal {
+  to { opacity: 1; transform: translateY(0); }
+}
