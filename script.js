@@ -73,3 +73,15 @@ document.addEventListener('DOMContentLoaded', () => {
     window.addEventListener('scroll', stickyToggle);
   }
 });
+document.addEventListener('DOMContentLoaded', () => {
+  const sections = document.querySelectorAll('main section');
+  sections.forEach((s, i) => {
+    const delay = i * 0.15;
+    s.style.animationDelay = delay + 's';
+    // stagger children a bit later
+    const children = s.querySelectorAll('.skill, p, h2, .hero-title, .hero-sub, .hero-btn');
+    children.forEach((c, j) => {
+      c.style.animationDelay = (delay + 0.12 + j * 0.06) + 's';
+    });
+  });
+});
