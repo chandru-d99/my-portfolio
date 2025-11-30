@@ -1,3 +1,23 @@
+
+
+// scroll reveal animation
+function reveal() {
+  let reveals = document.querySelectorAll(".reveal");
+
+  for (let i = 0; i < reveals.length; i++) {
+    let windowHeight = window.innerHeight;
+    let elementTop = reveals[i].getBoundingClientRect().top;
+    let revealPoint = 120;
+
+    if (elementTop < windowHeight - revealPoint) {
+      reveals[i].classList.add("active");
+    }
+  }
+}
+
+window.addEventListener("scroll", reveal);
+reveal();
+
 // Wait for DOM
 document.addEventListener('DOMContentLoaded', () => {
   // 1) stagger animation delays for sections and their children
