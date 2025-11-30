@@ -67,18 +67,42 @@ nav a:hover {
   border: 6px solid rgba(255,255,255,0.05);
   box-shadow: 0 12px 30px rgba(0,0,0,0.6);
   margin-bottom: 20px;
+  opacity: 0;
+  transform: scale(0.9);
+  transition: all 0.8s ease;
+}
+
+.reveal.active .hero-img {
+  opacity: 1;
+  transform: scale(1);
 }
 
 .hero-title {
   font-size: 48px;
   font-weight: 700;
   color: #fff;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.8s ease 0.1s;
+}
+
+.reveal.active .hero-title {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .hero-sub {
   margin-top: 10px;
   font-size: 18px;
   color: #bbb;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.8s ease 0.2s;
+}
+
+.reveal.active .hero-sub {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .hero-btn {
@@ -88,6 +112,14 @@ nav a:hover {
   color: white;
   font-weight: 600;
   border-radius: 10px;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.8s ease 0.3s;
+}
+
+.reveal.active .hero-btn {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 /* ------------------- About ------------------- */
@@ -97,6 +129,14 @@ nav a:hover {
   font-weight: 700;
   color: #ff4d6d;
   margin-bottom: 18px;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.8s ease;
+}
+
+.reveal.active .section-title {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .about-img {
@@ -107,6 +147,14 @@ nav a:hover {
   border: 6px solid rgba(255,255,255,0.05);
   box-shadow: 0 12px 30px rgba(0,0,0,0.6);
   margin-bottom: 20px;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.8s ease 0.1s;
+}
+
+.reveal.active .about-img {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .about-text {
@@ -114,6 +162,14 @@ nav a:hover {
   font-size: 18px;
   color: #ccc;
   line-height: 1.6;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.8s ease 0.2s;
+}
+
+.reveal.active .about-text {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 /* ------------------- Skills ------------------- */
@@ -138,6 +194,14 @@ nav a:hover {
   font-weight: 600;
   color: #eee;
   box-shadow: 0 4px 18px rgba(0,0,0,0.3);
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.7s ease;
+}
+
+.reveal.active .skill {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 /* ------------------- Contact ------------------- */
@@ -150,7 +214,16 @@ nav a:hover {
 .contact-line {
   margin: 10px 0;
   font-size: 18px;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.8s ease;
 }
+
+.reveal.active .contact-line {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 /* ------------------- Scroll Animations ------------------- */
 
 .reveal {
@@ -163,5 +236,6 @@ nav a:hover {
   opacity: 1;
   transform: translateY(0);
 }
+
 
 
